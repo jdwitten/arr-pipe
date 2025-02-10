@@ -1,9 +1,9 @@
-import { AnyElement, ArrayFunction, AnyOutputElement } from "./types";
+import { ArrayFunction, BaseElement,  } from "./types";
 import { hashElement } from "./util";
 
 export function intersection<
-  TInput extends AnyElement,
-  TOutput extends AnyOutputElement
+  TInput extends BaseElement,
+  TOutput extends BaseElement
 >(...fns: ArrayFunction<TInput, TOutput>[]): ArrayFunction<TInput, TOutput> {
   return async (input) => {
     const allResultSets: Set<TOutput | string>[] = [];

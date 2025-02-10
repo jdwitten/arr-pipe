@@ -1,0 +1,16 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+        "type": "node",
+        "request": "launch",
+        "name": "Test",
+        "skipFiles": ["<node_internals>/**"],
+        "runtimeExecutable": "yarn",
+        "runtimeArgs": ["test"],
+        "runtimeVersion": "22.13.1",
+        "console": "integratedTerminal",
+        "cwd": "${workspaceFolder}",
+      },
+  ]
+}

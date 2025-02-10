@@ -5,11 +5,17 @@ export type AnyElement<T> = T extends object
 
 export type AnyOutputElement<T> = AnyElement<T> | Promise<AnyElement<T>>;
 
-export type ArrayFunction<TInput, TOutput> =
+export type BaseElement =
+  | { id: string }
+  | string
+  | number
+  | boolean
+  | null
+  | undefined;
+
+export type ArrayFunction<TInput = BaseElement, TOutput = BaseElement> =
   | ((arg: TInput[]) => TOutput[])
-  | (() => TOutput[])
-  | ((arg: TInput[]) => Promise<TOutput[]>)
-  | (() => Promise<TOutput[]>);
+  | ((arg: TInput[]) => Promise<TOutput[]>);
 
 export type AnyFunction =
   | ((input: any[]) => any[])

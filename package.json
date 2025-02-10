@@ -1,17 +1,18 @@
 {
   "name": "array-pipe",
   "version": "0.0.1",
-  "description": "A functional and declarative TypeScript library for composing operations on arrays",
+  "description": "A functional, declarative, and typesafe library for composing operations on arrays",
   "repository": "https://github.com/jdwitten/array-pipe.git",
   "author": "Jonathan Witten <jdwitten11@gmail.com>",
   "license": "MIT",
   "packageManager": "yarn@4.6.0",
   "scripts": {
-    "build": "tsup src/index.ts --format cjs,esm --dts"
+    "build": "tsup src/index.ts --format cjs,esm --dts",
+    "test": "node --test"
   },
   "devDependencies": {
     "@tsconfig/recommended": "^1.0.8",
-    "@types/node": "^20.10.0",
+    "@types/node": "^22.13.1",
     "eslint": "^8.0.1",
     "eslint-config-standard": "^17.1.0",
     "eslint-plugin-import": "^2.25.2",

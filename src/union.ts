@@ -1,23 +1,17 @@
-import { AnyElement, AnyOutputElement, ArrayFunction } from "./types";
+import { ArrayFunction, BaseElement } from "./types";
+import { hashElement } from "./util";
 
-export function union<
-  TInput extends AnyElement = AnyElement,
-  TOutput extends AnyOutputElement = AnyOutputElement
->(...fns: ArrayFunction<TInput, TOutput>[]): ArrayFunction<TInput, TOutput> {
+export function union<TInput extends BaseElement, TOutput extends BaseElement>(
+  ...fns: ArrayFunction<TInput, TOutput>[]
+): ArrayFunction<TInput, TOutput> {
   return async (input: TInput[]) => {
-    const resultIds: Set<string> = new Set();
-    const resultSet: Set<TOutput> = new Set();
+    const results: Map<string | TOutput, TOutput> = new Map();
     for (const fn of fns) {
       const result = await fn(input);
       for (const item of result) {
-        if (item != null && "id" in item && !resultIds.has(item.id)) {
-          resultIds.add(item.id);
-          resultSet.add(item);
-        } else {
-          resultSet.add(item);
-        }
+        results.set(hashElement(item), item);
       }
     }
-    return Array.from(resultSet);
+    return Array.from(results.values());
   };
 }
