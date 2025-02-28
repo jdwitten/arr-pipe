@@ -26,6 +26,14 @@ fi
 # Get the new version from package.json
 VERSION=$(node -p "require('./package.json').version")
 
+# Check for release notes
+RELEASE_NOTES_FILE="release-notes/v$VERSION.md"
+if [ ! -f "$RELEASE_NOTES_FILE" ]; then
+    echo "Error: Release notes file not found at $RELEASE_NOTES_FILE"
+    echo "Please create release notes before publishing"
+    exit 1
+fi
+
 # Publish to npm
 yarn npm publish
 
@@ -33,10 +41,10 @@ yarn npm publish
 git tag -a "v$VERSION" -m "Release v$VERSION"
 git push origin "v$VERSION"
 
-# Create GitHub release
+# Create GitHub release with release notes
 gh release create "v$VERSION" \
     --title "v$VERSION" \
-    --notes "Release v$VERSION" \
+    --notes-file "$RELEASE_NOTES_FILE" \
     --verify-tag
 
 echo "Successfully published v$VERSION to npm and created GitHub release"

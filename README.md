@@ -87,10 +87,11 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 To publish a new version:
 
 1. Update version in package.json
-2. Commit changes
-3. Run `yarn deploy`
+2. Create release notes in `release-notes/v{version}.md`
+3. Commit changes
+4. Run `yarn deploy`
 
-This will publish to npm and create a git tag.
+This will publish to npm and create a GitHub release with the corresponding release notes.
 
 ## 📄 License
 
