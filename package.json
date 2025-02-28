@@ -1,6 +1,6 @@
 {
   "name": "arr-pipe",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A functional, declarative, and typesafe library for composing operations on arrays",
   "repository": "https://github.com/jdwitten/array-pipe.git",
   "author": "Jonathan Witten <jdwitten11@gmail.com>",

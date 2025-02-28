@@ -1,4 +1,4 @@
-# array-pipe
+# arr-pipe
 
 A functional, declarative, and typesafe library for composing operations on arrays.
 
@@ -88,7 +88,7 @@ To publish a new version:
 
 1. Update version in package.json
 2. Commit changes
-3. Run `./scripts/publish`
+3. Run `yarn deploy`
 
 This will publish to npm and create a git tag.
 
