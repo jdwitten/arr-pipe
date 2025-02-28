@@ -34,9 +34,6 @@ if [ ! -f "$RELEASE_NOTES_FILE" ]; then
     exit 1
 fi
 
-# Publish to npm
-yarn npm publish
-
 # Create and push git tag
 git tag -a "v$VERSION" -m "Release v$VERSION"
 git push origin "v$VERSION"
@@ -46,5 +43,8 @@ gh release create "v$VERSION" \
     --title "v$VERSION" \
     --notes-file "$RELEASE_NOTES_FILE" \
     --verify-tag
+
+# Publish to npm
+yarn npm publish
 
 echo "Successfully published v$VERSION to npm and created GitHub release"
