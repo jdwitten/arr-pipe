@@ -1,6 +1,6 @@
 {
   "name": "array-pipe",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "A functional, declarative, and typesafe library for composing operations on arrays",
   "repository": "https://github.com/jdwitten/array-pipe.git",
   "author": "Jonathan Witten <jdwitten11@gmail.com>",
@@ -8,6 +8,7 @@
   "packageManager": "yarn@4.6.0",
   "scripts": {
     "build": "tsup src/index.ts --format cjs,esm --dts",
+    "deploy": "yarn build && sh ./scripts/publish",
     "test": "node --test"
   },
   "devDependencies": {
@@ -34,5 +35,11 @@
   },
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
-  "types": "./dist/index.d.ts"
+  "types": "./dist/index.d.ts",
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "peerDependencies": {
+    "node": ">=22.0.0"
+  }
 }
