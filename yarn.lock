@@ -633,6 +633,24 @@ __metadata:
   languageName: node
   linkType: hard
 
+"arr-pipe@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "arr-pipe@workspace:."
+  dependencies:
+    "@tsconfig/recommended": "npm:^1.0.8"
+    "@types/node": "npm:^22.13.1"
+    eslint: "npm:^8.0.1"
+    eslint-config-standard: "npm:^17.1.0"
+    eslint-plugin-import: "npm:^2.25.2"
+    eslint-plugin-n: "npm:^15.0.0 || ^16.0.0 "
+    eslint-plugin-promise: "npm:^6.0.0"
+    tsup: "npm:^8.3.5"
+    typescript: "npm:^5.7.3"
+  peerDependencies:
+    node: ">=22.0.0"
+  languageName: unknown
+  linkType: soft
+
 "array-buffer-byte-length@npm:^1.0.1, array-buffer-byte-length@npm:^1.0.2":
   version: 1.0.2
   resolution: "array-buffer-byte-length@npm:1.0.2"
@@ -656,22 +674,6 @@ __metadata:
   checksum: 10c0/5b1004d203e85873b96ddc493f090c9672fd6c80d7a60b798da8a14bff8a670ff95db5aafc9abc14a211943f05220dacf8ea17638ae0af1a6a47b8c0b48ce370
   languageName: node
   linkType: hard
-
-"array-pipe@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "array-pipe@workspace:."
-  dependencies:
-    "@tsconfig/recommended": "npm:^1.0.8"
-    "@types/node": "npm:^22.13.1"
-    eslint: "npm:^8.0.1"
-    eslint-config-standard: "npm:^17.1.0"
-    eslint-plugin-import: "npm:^2.25.2"
-    eslint-plugin-n: "npm:^15.0.0 || ^16.0.0 "
-    eslint-plugin-promise: "npm:^6.0.0"
-    tsup: "npm:^8.3.5"
-    typescript: "npm:^5.7.3"
-  languageName: unknown
-  linkType: soft
 
 "array.prototype.findlastindex@npm:^1.2.5":
   version: 1.2.5
