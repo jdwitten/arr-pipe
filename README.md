@@ -76,7 +76,7 @@ yarn test
 
 ## 📚 Learn More
 
-Check out the [blog post](https://jwitt.dev/post/array-pipe) for a detailed explanation of the implementation and use cases.
+Check out the [blog post](https://jwitt.dev/posts/arr-pipe) for a detailed explanation of the implementation and use cases.
 
 ## 🤝 Contributing
 
